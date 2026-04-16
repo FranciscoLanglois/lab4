@@ -1,5 +1,14 @@
+<div class="d-flex justify-content-center p-3">
+  <div class="btn-group" role="group" aria-label="Navegación Principal">
+    <%= link_to "Owners", owners_path, class: "btn btn-primary" %>
+    <%= link_to "Pets", pets_path, class: "btn btn-primary" %>
+    <%= link_to "Vets", vets_path, class: "btn btn-primary" %>
+    <%= link_to "Appointments", appointments_path, class: "btn btn-primary" %>
+  </div>
+</div>
 <div class = "conteiner"> 
-<table border="1">
+<div class="d-flex justify-content-center">
+<table class="table table-striped table-hover table-bordered text-center w-75">
   <thead>
     <tr>
       <th>First_name</th>
@@ -12,9 +21,7 @@
   <tbody>
     <% @owners.each do |owner| %>
       <tr>
-        <td>
-          <%= link_to owner.first_name, owner_path(owner) %>
-        </td>
+        <td><%= link_to owner.first_name, owner_path(owner) %></td>
         <td><%= owner.last_name %></td>
         <td><%= owner.email %></td>
         <td><%= owner.phone %></td>
@@ -23,3 +30,5 @@
     <% end %>
   </tbody>
 </table>
+</div>
+</div>

@@ -1,5 +1,14 @@
+<div class="d-flex justify-content-center p-3">
+  <div class="btn-group" role="group" aria-label="Navegación Principal">
+    <%= link_to "Owners", owners_path, class: "btn btn-primary" %>
+    <%= link_to "Pets", pets_path, class: "btn btn-primary" %>
+    <%= link_to "Vets", vets_path, class: "btn btn-primary" %>
+    <%= link_to "Appointments", appointments_path, class: "btn btn-primary" %>
+  </div>
+</div>
 <div class = "conteiner"> 
-<table border="1">
+<div class="d-flex justify-content-center">
+<table class="table table-striped table-hover table-bordered text-center w-75">
   <thead>
     <tr>
       <th>Name</th>
@@ -7,7 +16,7 @@
       <th>Breed</th>
       <th>Date_of_birth</th>
       <th>Weight</th>
-      <th>Owner_id</th>
+      <th>Owner_Name</th>
     </tr>
   </thead>
   <tbody>
@@ -16,10 +25,12 @@
         <td><%= link_to pet.name, pet_path(pet) %></td>
         <td><%= pet.species %></td>
         <td><%= pet.breed %></td>
-        <td><%= pet.date_of_birth %></td>
+        <td><%= pet.date_of_birth.strftime("%B %d, %Y") %></td>
         <td><%= pet.weight %></td>
-        <td><%= link_to pet.owner_id, owner_path(pet.owner_id) %></td>
+        <td><%= link_to pet.owner.first_name, owner_path(pet.owner_id) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
+</div>
