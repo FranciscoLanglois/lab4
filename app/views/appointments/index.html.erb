@@ -1,8 +1,31 @@
 <div class = "conteiner"> 
-    <h1>Appointments</h1>
-    <ul>
-        <% @appointments.each do |appointment| %>
-        <btn> <%= .title %> </btn>
-        <% end %>
-    </ul>
-</div>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Appointment_ID</th>
+      <th>Pet_ID</th>
+      <th>Vet_ID</th>
+      <th>Date</th>
+      <th>Reason</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @appointments.each do |appointment| %>
+      <tr>
+        <td>
+          <%= link_to appointment.id, appointment_path(appointment.id) %>
+        </td>
+        <td>
+          <%= link_to appointment.pet_id, pet_path(appointment.pet_id) %>
+        </td>
+        <td>
+          <%= link_to appointment.vet_id, vet_path(appointment.vet_id) %>
+        </td>
+        <td><%= appointment.date %></td>
+        <td><%= appointment.reason %></td>
+        <td><%= appointment.status %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

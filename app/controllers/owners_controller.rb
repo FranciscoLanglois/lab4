@@ -3,6 +3,7 @@ class OwnersController < ApplicationController
 		@owners = Owner.all 
 	end
 	def show
-		@owner =Owner.find(params[:id])
+		@owner = Owner.find(params[:id])
+		@pets = @owner.pets
 	end
 end

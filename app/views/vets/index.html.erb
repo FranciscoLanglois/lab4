@@ -1,0 +1,23 @@
+<div class = "conteiner"> 
+<table border="1">
+  <thead>
+    <tr>
+      <th>First_name</th>
+      <th>Last_name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Specialization</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @vets.each do |vet| %>
+      <tr>
+        <td><%= link_to vet.first_name, vet_path(vet.first_name) %></td>
+        <td><%= vet.last_name %></td>
+        <td><%= vet.email %></td>
+        <td><%= vet.phone %></td>
+        <td><%= vet.specialization %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
